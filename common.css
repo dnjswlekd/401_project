@@ -1,0 +1,46 @@
+@harset "utf-8";
+
+/* 폰트 */
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+ul,
+li {
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  color: #333;
+  font-size: 14px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  font-size: 75px;
+  font-weight: bold;
+  font-family: "Roboto Slab", serif;
+}
+
+h1 span {
+  display: inline-block;
+  animation: float 0.2s ease-in-out infinite;
+}
