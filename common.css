@@ -1,4 +1,4 @@
-@harset "utf-8";
+@charset "utf-8";
 
 /* 폰트 */
 
@@ -35,12 +35,179 @@ body {
 }
 
 h1 {
-  font-size: 75px;
+  /* 14px * 5em = 70pixel */
+  font-size: 5em;
+  font: bold 7.5vw/1.6;
   font-weight: bold;
   font-family: "Roboto Slab", serif;
+  user-select: none;
+  /* 글자 드래그 안되도록 */
 }
 
 h1 span {
   display: inline-block;
   animation: float 0.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: none;
+  }
+  33% {
+    transform: translateY(-1px) rotate(-20 deg);
+  }
+  60% {
+    transform: translateY(1px) rotate(20 deg);
+  }
+}
+
+body:hover span {
+  animation: bounce 0.6s 2;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: rotateX(20deg) translateY(2px) rotate(-3deg);
+  }
+  50% {
+    transform: rotateX(-20px) translateY(3deg) scale(1.1);
+  }
+}
+
+span:nth-child(1) {
+  color: blanchedalmond;
+  text-shadow: #333;
+  animation-delay: 0.2s;
+}
+
+span:nth-child(4) {
+  color: blanchedalmond;
+  text-shadow: #333;
+  animation-delay: 0.2s;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 1px solid #333;
+  /* overflow: hidden; */
+  text-align: center;
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 20%;
+}
+
+.logo a {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+header ul {
+  /* display: inline-block; */
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul li {
+  padding: 5px;
+  line-height: 70px;
+}
+
+header ul li a {
+  text-align: center;
+  font-weight: 600px;
+}
+
+header ul li a:hover {
+  color: white;
+  background-color: blue;
+}
+
+.icon a i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.search-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  border-radius: 40px;
+  padding: 5px;
+  width: 20%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input[type="text"] {
+  width: 80px;
+  padding: 5px;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.fixbn {
+  width: 21%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 1px solid #333;
+  text-align: center;
+  background: #fff;
+}
+
+video {
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+.fixbn h2 {
+  color: #29624f;
+}
+
+.fixbn h2 a p {
+  margin-top: 15px;
+  text-decoration: underline;
+}
+
+.contents {
+  width: 79%;
+  float: right;
+  position: relative;
+  /* 모든 영역에 display: block 또는 relative 무조건 다 줌 */
+}
+
+.mainbg {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.mainbg img {
+  float: right;
+  width: 50%;
+}
+
+.text {
+  width: 80%;
+  position: absolute;
+  top: 150px;
+  left: 0;
 }
